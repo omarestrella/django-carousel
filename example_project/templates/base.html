@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>django-carousel</title>
+
+    <script src="{{ STATIC_URL }}swipe.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}swipe.css" />
+
+    <style type="text/css">
+        .carousel {
+            width: 750px;
+            margin: 30px auto;
+        }
+
+        .carousel ul li img {
+            width: 100%;
+        }
+
+        .carousel .next {
+            float: right;
+        }
+
+        .carousel .prev {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    {% load carousel_tags %}
+    <div id="testing-carousel" class="carousel">
+        {% carousel show_carousel "testing" %}
+        <span class="prev"><a href="#" onclick="prev();">prev</a></span>
+        <span class="next"><a href="#" onclick="next();">next</a></span>
+    </div>
+</body>
+
+<script type="text/javascript">
+var carousel = new Swipe(document.getElementById('testing-carousel'), {
+    'startSlide': 0,
+    'speed': 1000
+});
+
+function next() {
+    carousel.next();
+}
+
+function prev() {
+    carousel.prev();
+}
+</script>
+
+</html>

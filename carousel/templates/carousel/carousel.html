@@ -1,0 +1,7 @@
+<ul>
+    {% for slide in carousel.slides.all %}
+        <li style="display:{% if forloop.first %}block{% else %}none{% endif %}">
+            <img src="{{ slide.image.url }}" />
+        </li>
+    {% endfor %}
+</ul>
