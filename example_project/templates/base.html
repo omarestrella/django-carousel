@@ -1,10 +1,11 @@
+{% load carousel_tags %}
+
 <!doctype html>
 <html>
 <head>
     <title>django-carousel</title>
-
-    <script src="{{ STATIC_URL }}swipe.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}swipe.css" />
+    
+    {% carousel_media %}
 
     <style type="text/css">
         .carousel {
@@ -27,7 +28,7 @@
 </head>
 
 <body>
-    {% load carousel_tags %}
+    
     <div id="testing-carousel" class="carousel">
         {% show_carousel "testing" %}
         <span class="prev"><a href="#" onclick="prev();">prev</a></span>
