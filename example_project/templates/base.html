@@ -4,8 +4,6 @@
 <html>
 <head>
     <title>django-carousel</title>
-    
-    {% carousel_media %}
 
     <style type="text/css">
         .carousel {
@@ -28,7 +26,6 @@
 </head>
 
 <body>
-    
     <div id="testing-carousel" class="carousel">
         {% show_carousel "testing" %}
         <span class="prev"><a href="#" onclick="prev();">prev</a></span>
@@ -36,11 +33,15 @@
     </div>
 </body>
 
+{% carousel_media %}
+
 <script type="text/javascript">
 var carousel = new Swipe(document.getElementById('testing-carousel'), {
     'startSlide': 0,
     'speed': 1000
 });
+
+enableIndicators(carousel);
 
 function next() {
     carousel.next();

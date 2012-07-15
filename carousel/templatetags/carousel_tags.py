@@ -30,8 +30,10 @@ def carousel_media():
         t = template.Template(
             '''
             <script src="{{ STATIC_URL }}swipe.min.js"></script>
+            <script src="{{ STATIC_URL }}carousel.js"></script>
 
             <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}swipe.css" />
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}carousel.css" />
             '''
         )
 
